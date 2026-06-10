@@ -1,0 +1,1 @@
+Replace YOUR_API_KEY in utils/helpers.py and run: pip install -r requirements.txt then pytest -v
