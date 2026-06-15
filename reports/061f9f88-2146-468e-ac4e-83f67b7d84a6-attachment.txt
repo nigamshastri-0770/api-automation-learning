@@ -1,0 +1,5 @@
+[32mINFO    [0m root:user_api.py:161 CREATE USER | 201
+[32mINFO    [0m root:user_api.py:131 GET USER 347 | 404
+[32mINFO    [0m root:user_api.py:248 VERIFY USER 347 | 404
+[32mINFO    [0m root:user_api.py:198 UPDATE USER | 200
+[32mINFO    [0m root:user_api.py:226 DELETE USER | 204

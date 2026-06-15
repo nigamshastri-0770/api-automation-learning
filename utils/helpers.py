@@ -1,10 +1,39 @@
-BASE_URL = "https://reqres.in"
+from utils.config_loader import (
+    CONFIG
+)
 
-API_KEY = "free_user_3EqwNfJjHbaSI4VWRBchJllgjn9"
+
+BASE_URL = (
+    CONFIG.get(
+        "base_url"
+    )
+)
 
 
 def get_headers():
-    return {
-        "x-api-key": API_KEY,
-        "Content-Type": "application/json"
-    }
+
+    headers = (
+
+        CONFIG.get(
+            "headers",
+            {}
+        )
+
+    )
+
+    if not headers:
+
+        print(
+            "\nWARNING: No headers found in config"
+        )
+
+    else:
+
+        print(
+            "\nLoaded Headers:",
+            headers
+        )
+
+    return (
+        headers.copy()
+    )

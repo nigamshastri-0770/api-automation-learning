@@ -3,25 +3,41 @@ import sqlite3
 
 class DB:
 
-    def connect(self):
+    def __init__(
 
-        return sqlite3.connect(
-            "database.db"
+        self
+
+    ):
+
+        self.conn = (
+
+            sqlite3.connect(
+                "database.db"
+            )
+
+        )
+
+        self.cursor = (
+
+            self.conn.cursor()
+
         )
 
 
     def insert_user(
+
         self,
+
         user_id,
+
         name,
+
         job
+
     ):
 
-        conn = self.connect()
+        self.cursor.execute(
 
-        cursor = conn.cursor()
-
-        cursor.execute(
             """
             INSERT INTO users
             VALUES(
@@ -32,31 +48,63 @@ class DB:
             """,
 
             (
+
                 user_id,
+
                 name,
+
                 job
+
             )
 
         )
 
-        conn.commit()
-
-        conn.close()
+        self.conn.commit()
 
 
     def get_user(
+
         self,
+
         user_id
+
     ):
 
-        conn = self.connect()
-
-        cursor = conn.cursor()
-
-        cursor.execute(
+        self.cursor.execute(
 
             """
             SELECT *
+            FROM users
+            WHERE id=?
+            """,
+
+            (
+
+                user_id,
+
+            )
+
+        )
+
+        return (
+
+            self.cursor.fetchone()
+
+        )
+
+
+    def cleanup(
+
+        self,
+
+        user_id
+
+    ):
+
+        self.cursor.execute(
+
+            """
+            DELETE
             FROM users
             WHERE id=?
             """,
@@ -67,8 +115,13 @@ class DB:
 
         )
 
-        result = cursor.fetchone()
+        self.conn.commit()
 
-        conn.close()
 
-        return result
+    def close(
+
+        self
+
+    ):
+
+        self.conn.close()

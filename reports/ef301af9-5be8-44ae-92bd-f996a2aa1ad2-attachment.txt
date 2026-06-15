@@ -1,0 +1,2 @@
+[32mINFO    [0m root:user_api.py:98 LOGIN | 200
+[32mINFO    [0m root:user_api.py:161 CREATE USER | 201

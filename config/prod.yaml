@@ -1,0 +1,9 @@
+base_url: "https://reqres.in"
+
+timeout: 20
+
+headers:
+
+  Content-Type: "application/json"
+
+  x-api-key: "free_user_3EqwNfJjHbaSI4VWRBchJllgjn9"

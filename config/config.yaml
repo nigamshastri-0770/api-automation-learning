@@ -1,0 +1,45 @@
+dev:
+
+  base_url: "https://reqres.in"
+
+  timeout: 30
+
+  db:
+
+    host: "localhost"
+
+    port: 3306
+
+    database: "qa_dev"
+
+
+
+qa:
+
+  base_url: "https://reqres.in"
+
+  timeout: 30
+
+  db:
+
+    host: "localhost"
+
+    port: 3306
+
+    database: "qa_test"
+
+
+
+prod:
+
+  base_url: "https://reqres.in"
+
+  timeout: 30
+
+  db:
+
+    host: "localhost"
+
+    port: 3306
+
+    database: "qa_prod"
